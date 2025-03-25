@@ -145,7 +145,9 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<table>\
+
+			
+			var popupContent = '<table>\
 			        <tr>\
                         <td colspan="2"><h2>' + (feature.properties['EXTRACTED_ADDRESS_SUMMARY'] !== null ? autolinker.link(String(feature.properties['EXTRACTED_ADDRESS_SUMMARY']).replace(/'/g, '\'').toLocaleString()) : '') + '</h2></td>\
                     </tr>\
@@ -154,11 +156,11 @@
                         <td class="visible-with-data" id="EXTRACTED_ASSESSMENT_ROLL_NUMBER">' + (feature.properties['EXTRACTED_ASSESSMENT_ROLL_NUMBER'] !== null ? autolinker.link(String(feature.properties['EXTRACTED_ASSESSMENT_ROLL_NUMBER']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Number of Tax Rolls</th>\
+                        <th scope="row">Number of Tax Rolls <i class="fas fa-info-circle" title="Some properties like townhomes and appartments have multiple tax rolls within a parcel"></i></th>\
                         <td class="visible-with-data" id="Number of addresses">' + (feature.properties['Number of addresses'] !== null ? autolinker.link(String(feature.properties['Number of addresses']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Zoning Code</th>\
+                        <th scope="row"><a href ="iving-ottawa/laws-licences-and-permits/laws/laws-z/zoning-law-no-2008-250/zoning-law-2008-250-consolidation#section-51c4b8c9-cef3-42d3-a63e-3777c828f15c">Zoning Code</a></th>\
                         <td class="visible-with-data" id="ZONE_MAIN">' + (feature.properties['ZONE_MAIN'] !== null ? autolinker.link(String(feature.properties['ZONE_MAIN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -723,7 +725,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: 'Municipal Taxes by Hectare - Thousands ($000)<br /><table><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_250.png" /></td><td>< $25</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_25501.png" /></td><td>$25 - $50</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_501002.png" /></td><td>$50 - $100</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_1002503.png" /></td><td>$100 - $250</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_2505004.png" /></td><td>$250 - $500</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_50010005.png" /></td><td>$500 - $1,000</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_10006.png" /></td><td>> $1,000</td></tr></table>', layer: layer_MunicipalTaxesbyHectareThousands000_3},
+            {label: '2024 Municipal Taxes by Hectare<br /><table><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_250.png" /></td><td>< $25k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_25501.png" /></td><td>$25k - $50k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_501002.png" /></td><td>$50k - $100k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_1002503.png" /></td><td>$100k- $250k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_2505004.png" /></td><td>$250k - $500k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_50010005.png" /></td><td>$500k - $1,000k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_10006.png" /></td><td>> $1,000k</td></tr></table>', layer: layer_MunicipalTaxesbyHectareThousands000_3},
             {label: "Google Satellite", layer: layer_GoogleSatellite_2, radioGroup: 'bm' },
             {label: "Light Theme", layer: layer_LightTheme_1, radioGroup: 'bm' },
             {label: "Dark Theme", layer: layer_DarkTheme_0, radioGroup: 'bm' },]
