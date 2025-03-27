@@ -152,11 +152,11 @@
                         <td colspan="2"><h2>' + (feature.properties['EXTRACTED_ADDRESS_SUMMARY'] !== null ? autolinker.link(String(feature.properties['EXTRACTED_ADDRESS_SUMMARY']).replace(/'/g, '\'').toLocaleString()) : '') + '</h2></td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Parcel Roll No</th>\
+                        <th scope="row">Assessment Roll No</th>\
                         <td class="visible-with-data" id="EXTRACTED_ASSESSMENT_ROLL_NUMBER">' + (feature.properties['EXTRACTED_ASSESSMENT_ROLL_NUMBER'] !== null ? autolinker.link(String(feature.properties['EXTRACTED_ASSESSMENT_ROLL_NUMBER']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Roll No (count) <i class="fas fa-info-circle" title="Multiple roll numbers indicates multiple units, buildings, or owners on one parcel."></i></th>\
+                        <th scope="row">Addresses within parcel <i class="fas fa-info-circle" title="Multiple roll numbers indicates multiple units, buildings, or owners on one parcel. All subsequent data are aggregated at the parcel level."></i></th>\
                         <td class="visible-with-data" id="Number of addresses">' + (feature.properties['Number of addresses'] !== null ? autolinker.link(String(feature.properties['Number of addresses']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
