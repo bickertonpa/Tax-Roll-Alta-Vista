@@ -35,7 +35,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/MunicipalTaxesbyHectareThousands000_3.js"></script>
+        <script src="data/Buffered_RevenuebyParcelpoints_AltaVista_3.js"></script>
         <script>
 		// Define the helper function for currency formatting
 		function formatCurrency(value) {
@@ -59,7 +59,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[45.401164889810765,-75.63486585221531],[45.40802668065636,-75.62098579863364]]);
+        }).fitBounds([[45.38768797185049,-75.64944945302764],[45.397427123277275,-75.62738093445562]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -97,10 +97,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_DarkTheme_0');
-        map.getPane('pane_DarkTheme_0').style.zIndex = 400;
-        var layer_DarkTheme_0 = L.tileLayer('https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
-            pane: 'pane_DarkTheme_0',
+        map.createPane('pane_DarkMatter_0');
+        map.getPane('pane_DarkMatter_0').style.zIndex = 400;
+        var layer_DarkMatter_0 = L.tileLayer('https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+            pane: 'pane_DarkMatter_0',
             opacity: 1.0,
             attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
             minZoom: 1,
@@ -108,11 +108,11 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_DarkTheme_0;
-        map.createPane('pane_LightTheme_1');
-        map.getPane('pane_LightTheme_1').style.zIndex = 401;
-        var layer_LightTheme_1 = L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-            pane: 'pane_LightTheme_1',
+        layer_DarkMatter_0;
+        map.createPane('pane_Positron_1');
+        map.getPane('pane_Positron_1').style.zIndex = 401;
+        var layer_Positron_1 = L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            pane: 'pane_Positron_1',
             opacity: 1.0,
             attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
             minZoom: 1,
@@ -120,8 +120,8 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_LightTheme_1;
-        map.addLayer(layer_LightTheme_1);
+        layer_Positron_1;
+        map.addLayer(layer_Positron_1);
         map.createPane('pane_GoogleSatellite_2');
         map.getPane('pane_GoogleSatellite_2').style.zIndex = 402;
         var layer_GoogleSatellite_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
@@ -134,7 +134,7 @@
             maxNativeZoom: 20
         });
         layer_GoogleSatellite_2;
-        function pop_MunicipalTaxesbyHectareThousands000_3(feature, layer) {
+        function pop_Buffered_RevenuebyParcelpoints_AltaVista_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -145,9 +145,7 @@
                 },
                 mouseover: highlightFeature,
             });
-
-			
-			var popupContent = '<table>\
+            var popupContent = '<table>\
 			        <tr>\
                         <td colspan="2"><h2>' + (feature.properties['EXTRACTED_ADDRESS_SUMMARY'] !== null ? autolinker.link(String(feature.properties['EXTRACTED_ADDRESS_SUMMARY']).replace(/'/g, '\'').toLocaleString()) : '') + '</h2></td>\
                     </tr>\
@@ -401,127 +399,97 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_MunicipalTaxesbyHectareThousands000_3_0(feature) {
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 0.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 25000.000000 ) {
+        function style_Buffered_RevenuebyParcelpoints_AltaVista_3_0(feature) {
+            if (feature.properties['2024 Municipal Tax by Hectare'] >= 0.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 56038.880000 ) {
                 return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
+                pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
                 opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
+                color: 'rgba(204,204,204,0.8)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,0.8)',
+                fillColor: 'rgba(255,255,204,0.8)',
                 interactive: true,
             }
             }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 25000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 50000.000000 ) {
+            if (feature.properties['2024 Municipal Tax by Hectare'] >= 56038.880000 && feature.properties['2024 Municipal Tax by Hectare'] <= 88443.054000 ) {
                 return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
+                pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
                 opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
+                color: 'rgba(204,204,204,0.8)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(240,124,74,0.8)',
+                fillColor: 'rgba(161,218,180,0.8)',
                 interactive: true,
             }
             }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 50000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 100000.000000 ) {
+            if (feature.properties['2024 Municipal Tax by Hectare'] >= 88443.054000 && feature.properties['2024 Municipal Tax by Hectare'] <= 119685.314000 ) {
                 return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
+                pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
                 opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
+                color: 'rgba(204,204,204,0.8)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(254,201,128,0.8)',
+                fillColor: 'rgba(65,182,196,0.8)',
                 interactive: true,
             }
             }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 100000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 250000.000000 ) {
+            if (feature.properties['2024 Municipal Tax by Hectare'] >= 119685.314000 && feature.properties['2024 Municipal Tax by Hectare'] <= 163296.290000 ) {
                 return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
+                pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
                 opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
+                color: 'rgba(204,204,204,0.8)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,191,0.8)',
+                fillColor: 'rgba(44,127,184,0.8)',
                 interactive: true,
             }
             }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 250000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 500000.000000 ) {
+            if (feature.properties['2024 Municipal Tax by Hectare'] >= 163296.290000 && feature.properties['2024 Municipal Tax by Hectare'] <= 15731116.800000 ) {
                 return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
+                pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
                 opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
+                color: 'rgba(204,204,204,0.8)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(199,232,173,0.8)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 500000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 1000000.000000 ) {
-                return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
-                opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(128,191,171,0.8)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['2024 Municipal Tax by Hectare'] >= 1000000.000000 && feature.properties['2024 Municipal Tax by Hectare'] <= 2000000.000000 ) {
-                return {
-                pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
-                opacity: 1,
-                color: 'rgba(255,255,255,0.8)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(43,131,186,0.8)',
+                fillColor: 'rgba(37,52,148,0.8)',
                 interactive: true,
             }
             }
         }
-        map.createPane('pane_MunicipalTaxesbyHectareThousands000_3');
-        map.getPane('pane_MunicipalTaxesbyHectareThousands000_3').style.zIndex = 403;
-        map.getPane('pane_MunicipalTaxesbyHectareThousands000_3').style['mix-blend-mode'] = 'normal';
-        var layer_MunicipalTaxesbyHectareThousands000_3 = new L.geoJson(json_MunicipalTaxesbyHectareThousands000_3, {
+        map.createPane('pane_Buffered_RevenuebyParcelpoints_AltaVista_3');
+        map.getPane('pane_Buffered_RevenuebyParcelpoints_AltaVista_3').style.zIndex = 403;
+        map.getPane('pane_Buffered_RevenuebyParcelpoints_AltaVista_3').style['mix-blend-mode'] = 'normal';
+        var layer_Buffered_RevenuebyParcelpoints_AltaVista_3 = new L.geoJson(json_Buffered_RevenuebyParcelpoints_AltaVista_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MunicipalTaxesbyHectareThousands000_3',
-            layerName: 'layer_MunicipalTaxesbyHectareThousands000_3',
-            pane: 'pane_MunicipalTaxesbyHectareThousands000_3',
-            onEachFeature: pop_MunicipalTaxesbyHectareThousands000_3,
-            style: style_MunicipalTaxesbyHectareThousands000_3_0,
+            dataVar: 'json_Buffered_RevenuebyParcelpoints_AltaVista_3',
+            layerName: 'layer_Buffered_RevenuebyParcelpoints_AltaVista_3',
+            pane: 'pane_Buffered_RevenuebyParcelpoints_AltaVista_3',
+            onEachFeature: pop_Buffered_RevenuebyParcelpoints_AltaVista_3,
+            style: style_Buffered_RevenuebyParcelpoints_AltaVista_3_0,
         });
-        bounds_group.addLayer(layer_MunicipalTaxesbyHectareThousands000_3);
-        map.addLayer(layer_MunicipalTaxesbyHectareThousands000_3);
+        bounds_group.addLayer(layer_Buffered_RevenuebyParcelpoints_AltaVista_3);
+        map.addLayer(layer_Buffered_RevenuebyParcelpoints_AltaVista_3);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -533,10 +501,10 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: '2024 Municipal Taxes by Hectare<br /><table><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_250.png" /></td><td>< $25k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_25501.png" /></td><td>$25k - $50k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_501002.png" /></td><td>$50k - $100k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_1002503.png" /></td><td>$100k- $250k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_2505004.png" /></td><td>$250k - $500k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_50010005.png" /></td><td>$500k - $1,000k</td></tr><tr><td style="text-align: center;"><img src="legend/MunicipalTaxesbyHectareThousands000_3_10006.png" /></td><td>> $1,000k</td></tr></table>', layer: layer_MunicipalTaxesbyHectareThousands000_3},
+            {label: 'Buffered_Revenue by Parcel - points_Alta Vista<br /><table><tr><td style="text-align: center;"><img src="legend/Buffered_RevenuebyParcelpoints_AltaVista_3_0560390.png" /></td><td>0 - 56,039</td></tr><tr><td style="text-align: center;"><img src="legend/Buffered_RevenuebyParcelpoints_AltaVista_3_56039884431.png" /></td><td>56,039 - 88,443</td></tr><tr><td style="text-align: center;"><img src="legend/Buffered_RevenuebyParcelpoints_AltaVista_3_884431196852.png" /></td><td>88,443 - 119,685</td></tr><tr><td style="text-align: center;"><img src="legend/Buffered_RevenuebyParcelpoints_AltaVista_3_1196851632963.png" /></td><td>119,685 - 163,296</td></tr><tr><td style="text-align: center;"><img src="legend/Buffered_RevenuebyParcelpoints_AltaVista_3_163296157311174.png" /></td><td>163,296 - 15,731,117</td></tr></table>', layer: layer_Buffered_RevenuebyParcelpoints_AltaVista_3},
             {label: "Google Satellite", layer: layer_GoogleSatellite_2, radioGroup: 'bm' },
-            {label: "Light Theme", layer: layer_LightTheme_1, radioGroup: 'bm' },
-            {label: "Dark Theme", layer: layer_DarkTheme_0, radioGroup: 'bm' },]
+            {label: "Positron", layer: layer_Positron_1, radioGroup: 'bm' },
+            {label: "Dark Matter", layer: layer_DarkMatter_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
